@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    <div class="container-fluid">
-      <div class="row">
-        <header class="col-12">
-          <Header />
-        </header>
-        
-        <main class="col-12">
-          <DiskList />
-        </main>
-      </div>
-    </div>
+      
+  <Header />
+
+  <main>
+    <DiskList />
+  </main>
+    
+    
   </div>
 </template>
 
@@ -31,9 +28,8 @@ export default {
 @import '@/style/general.scss';
 main {
   background-color: #1e2d3b;
+  padding: 50px;
   
 }
-header {
-  background: #2e3a46;
-}
+
 </style>

@@ -16,6 +16,7 @@ export default {
 .barra {
   width: 100%;
   height: 80px;
+  background: #2e3a46;
   img {
     height: 80%;
   }

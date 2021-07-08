@@ -1,10 +1,14 @@
 <template>
-    <div class="row row-cols-5 justify-content-center">
-        <div v-for="(disc, index) in discList" :key="index" class="col text-center">
-            <img :src="disc.poster" :alt="disc.title">
-            <h3>{{disc.title}}</h3>
-            <span>{{disc.author}}</span>
-            <span>{{disc.year}}</span>
+    <div class="container">
+        <div class="row row-cols-5 justify-content-center">
+            <div v-for="(disc, index) in discList" :key="index" class="text-center g-5">
+                <div class="box">
+                    <img :src="disc.poster" :alt="disc.title">
+                    <h3>{{disc.title}}</h3>
+                    <span>{{disc.author}}</span>
+                    <span>{{disc.year}}</span>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -37,15 +41,10 @@ export default {
 
 <style scoped lang="scss">
     .row {
-        margin: 50px auto;
-        flex-shrink: 1;
-        width: 80%;
-        margin: 0 auto;
-        .col{
-            width: 15%;
+        .box{
             background: #2e3a46;
             padding: 20px;
-            margin: 20px;
+            height: 100%;
             img {
                 width: 100%;
             }
