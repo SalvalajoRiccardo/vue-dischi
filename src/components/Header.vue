@@ -1,5 +1,5 @@
 <template>
-  <div class="barra">
+  <div class="barra d-flex align-items-center">
     <img src="https://www.cantabrialabsdifacooper.it/wp-content/uploads/2021/03/png-clipart-spotify-logo-spotify-computer-icons-podcast-music-apps-miscellaneous-angle-1-e1614848134495.png" alt="spotify">
   </div>
 </template>
@@ -18,7 +18,6 @@ export default {
   height: 80px;
   img {
     height: 80%;
-    margin: 10px 0;
   }
 }
 

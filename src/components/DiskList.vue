@@ -1,6 +1,6 @@
 <template>
-    <div class="row row-cols-5 g-5">
-        <div v-for="(disc, index) in discList" :key="index" class="text-center">
+    <div class="row row-cols-5 justify-content-center">
+        <div v-for="(disc, index) in discList" :key="index" class="col text-center">
             <img :src="disc.poster" :alt="disc.title">
             <h3>{{disc.title}}</h3>
             <span>{{disc.author}}</span>
@@ -40,7 +40,8 @@ export default {
         margin: 50px auto;
         flex-shrink: 1;
         width: 80%;
-        .text-center{
+        margin: 0 auto;
+        .col{
             width: 15%;
             background: #2e3a46;
             padding: 20px;
