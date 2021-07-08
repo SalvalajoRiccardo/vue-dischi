@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-    <div class="row">
-      <div class="col-lg-12">
-        <Header />
+    <div class="container-fluid">
+      <div class="row">
+        <header class="col-12">
+          <Header />
+        </header>
+        
+        <main class="col-12">
+          <DiskList />
+        </main>
       </div>
-      
-      <main>
-        <DiskList />
-      </main>
     </div>
   </div>
 </template>
@@ -30,5 +32,8 @@ export default {
 main {
   background-color: #1e2d3b;
   
+}
+header {
+  background: #2e3a46;
 }
 </style>

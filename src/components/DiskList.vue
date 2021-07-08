@@ -1,19 +1,12 @@
 <template>
-    <div class="row row-5">
-        <div v-for="(disc, index) in discList" :key="index" class="col-lg">
+    <div class="row row-cols-5">
+        <div v-for="(disc, index) in discList" :key="index" class="col text-center">
             <img :src="disc.poster" :alt="disc.title">
             <h3>{{disc.title}}</h3>
             <p>{{disc.author}}</p>
             <p>{{disc.year}}</p>
-
         </div>
     </div>
-    <!-- "poster": "https://images-na.ssl-images-amazon.com/images/I/81r3FVfNG3L._SY355_.jpg",
-            "title": "And Justice for All",
-            "author": "Metallica",
-            "genre": "Metal",
-            "year": "1988"
-   -->
 </template>
 
 <script>
@@ -43,5 +36,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+    .row {
+        margin: 50px auto;
+        flex-shrink: 1;
+        width: 80%;
+        .col{
+            background: #2e3a46;
+            padding: 20px;
+            // margin: 50px;
+            img {
+                width: 100%;
+            }
+            h3 {
+                color: white;
+            }
+        }
+    }
 </style>
