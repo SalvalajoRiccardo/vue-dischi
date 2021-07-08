@@ -1,10 +1,10 @@
 <template>
-    <div class="row row-cols-5">
-        <div v-for="(disc, index) in discList" :key="index" class="col text-center">
+    <div class="row row-cols-5 g-5">
+        <div v-for="(disc, index) in discList" :key="index" class="text-center">
             <img :src="disc.poster" :alt="disc.title">
             <h3>{{disc.title}}</h3>
-            <p>{{disc.author}}</p>
-            <p>{{disc.year}}</p>
+            <span>{{disc.author}}</span>
+            <span>{{disc.year}}</span>
         </div>
     </div>
 </template>
@@ -40,15 +40,20 @@ export default {
         margin: 50px auto;
         flex-shrink: 1;
         width: 80%;
-        .col{
+        .text-center{
+            width: 15%;
             background: #2e3a46;
             padding: 20px;
-            // margin: 50px;
+            margin: 20px;
             img {
                 width: 100%;
             }
             h3 {
                 color: white;
+                margin: 8px 0;
+            }
+            span {
+                display: block;
             }
         }
     }
