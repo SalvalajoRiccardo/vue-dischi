@@ -1,12 +1,18 @@
 <template>
-  <div class="barra d-flex align-items-center">
+  <div class="barra d-flex align-items-center justify-content-between">
     <img src="https://www.cantabrialabsdifacooper.it/wp-content/uploads/2021/03/png-clipart-spotify-logo-spotify-computer-icons-podcast-music-apps-miscellaneous-angle-1-e1614848134495.png" alt="spotify">
+
+    <Selector />
   </div>
 </template>
 
 <script>
+import Selector from '@/components/Selector.vue'
 export default {
   name: 'Header',
+  components: {
+    Selector
+  }
   
 }
 </script>

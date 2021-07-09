@@ -15,6 +15,8 @@
 
 <script>
 import axios from 'axios'
+import {eventBus} from '../main.js'
+// import {eventBusT} from '../main.js'
 export default {
     name: 'DiskList',
     data(){
@@ -25,7 +27,13 @@ export default {
     },
     created(){
         this.getDisk()
+        
+        
     },
+
+    // mounted: {
+    //     eventBusT.$on('generes', );
+    // },
 
     methods: {
         getDisk(){
@@ -33,6 +41,7 @@ export default {
              .get(this.apiPath)
              .then(res=>{
                 this.discList = res.data.response;
+                eventBus.$emit('generes', this.discList);
              })
         }
     }
