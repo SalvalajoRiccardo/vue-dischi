@@ -1,5 +1,7 @@
 <template>
-  <select @change="a()" name="genra" id="genra" v-model="selectV">
+  <select  @change="a()" name="genra" id="genra" v-model="selectV">
+      <option value="" disabled selected>Select your genre</option>
+      <option value="All">All</option>
       <option v-for="(gen, i) in this.generS " :key="i" :value="gen">{{gen}}</option>
       
   </select>
@@ -13,7 +15,7 @@ export default {
  
  data(){
      return{
-         generS : ['all'],
+         generS : [],
          selectV : ''
          
      }

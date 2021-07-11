@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row row-cols-5 justify-content-center">
-            <div v-for="(disc, index) in discList" :key="index" class="text-center g-5">
+            <div v-for="(disc, index) in filteredGen" :key="index" class="text-center g-5">
                 <div class="box">
                     <img :src="disc.poster" :alt="disc.title">
                     <h3>{{disc.title}}</h3>
@@ -16,24 +16,33 @@
 <script>
 import axios from 'axios'
 import {eventBus} from '../main.js'
-// import {eventBusT} from '../main.js'
+import {eventBusT} from '../main.js'
 export default {
     name: 'DiskList',
     data(){
         return {
           apiPath : 'https://flynn.boolean.careers/exercises/api/array/music',
-          discList : ''
+          discList : '',
+          setGen: 'All',
         }
     },
     created(){
         this.getDisk()
         
+        eventBusT.$on('gener', element => {
+        this.setGen = element
+        })
         
     },
 
-    // mounted: {
-    //     eventBusT.$on('generes', );
-    // },
+    computed: {
+    filteredGen(){
+      if ( !this.setGen ) return [];
+      if (this.setGen=='All') return this.discList
+      return this.discList.filter(element => element.genre == this.setGen)
+      
+    }
+  },
 
     methods: {
         getDisk(){
@@ -41,8 +50,11 @@ export default {
              .get(this.apiPath)
              .then(res=>{
                 this.discList = res.data.response;
-                eventBus.$emit('generes', this.discList);
-             })
+                eventBus.$emit('generes', this.discList)
+                })
+             .catch(error => {
+                console.log('Errore: ', error);
+                });
         }
     }
 }
