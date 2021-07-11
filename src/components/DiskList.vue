@@ -37,7 +37,6 @@ export default {
 
     computed: {
     filteredGen(){
-      if ( !this.setGen ) return [];
       if (this.setGen=='All') return this.discList
       return this.discList.filter(element => element.genre == this.setGen)
       
